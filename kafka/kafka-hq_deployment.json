@@ -1,0 +1,76 @@
+{
+  "kind": "Deployment",
+  "apiVersion": "extensions/v1beta1",
+  "metadata": {
+    "name": "kafkahq",
+    "namespace": "<test>",
+    "labels": {
+      "app": "kafkahq"
+    },
+    "annotations": {
+      "deployment.kubernetes.io/revision": "13"
+      }
+  },
+  "spec": {
+    "replicas": 1,
+    "selector": {
+      "matchLabels": {
+        "app": "kafkahq"
+      }
+    },
+    "template": {
+      "metadata": {
+        "creationTimestamp": null,
+        "labels": {
+          "app": "kafkahq"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "kafkahq",
+            "image": "tchiotludo/kafkahq",
+            "ports": [
+              {
+                "containerPort": 8080,
+                "protocol": "TCP"
+              }
+            ],
+            "env": [
+              {
+                "name": "ZK_HOSTS",
+                "value": "reactive-sandbox-test-reactive-sandbox-zookeeper:2181"
+              },
+              {
+                "name": "LISTEN",
+                "value": "8080"
+              },
+              {
+                "name": "KAFKAHQ_CONFIGURATION",
+                "value": "\"kafkahq\": {\"connections\": {\"kafkahq\": {\"properties\": {\"bootstrap.servers\": \"reactive-sandbox-test-reactive-sandbox-kafka:9092\"}}}}\n"
+              }
+            ],
+            "resources": {},
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "imagePullPolicy": "Always"
+          }
+        ],
+        "restartPolicy": "Always",
+        "terminationGracePeriodSeconds": 30,
+        "dnsPolicy": "ClusterFirst",
+        "securityContext": {},
+        "schedulerName": "default-scheduler"
+      }
+    },
+    "strategy": {
+      "type": "RollingUpdate",
+      "rollingUpdate": {
+        "maxUnavailable": "25%",
+        "maxSurge": "25%"
+      }
+    },
+    "revisionHistoryLimit": 10,
+    "progressDeadlineSeconds": 600
+  }
+}

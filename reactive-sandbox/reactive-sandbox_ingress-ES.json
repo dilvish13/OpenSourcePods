@@ -1,0 +1,68 @@
+{
+  "kind": "Ingress",
+  "apiVersion": "extensions/v1beta1",
+  "metadata": {
+    "name": "elastic-search",
+    "namespace": "test"
+  },
+  "spec": {
+    "rules": [
+      {
+        "host": "<hostName>",
+        "http": {
+          "paths": [
+            {
+              "path": "/<indexName>/_search",
+              "backend": {
+                "serviceName": "reactive-sandbox-test-reactive-sandbox-elasticsearch",
+                "servicePort": 9200
+              }
+            },
+            {
+              "path": "/<indexName>/<docTypeName>/_search",
+              "backend": {
+                "serviceName": "reactive-sandbox-test-reactive-sandbox-elasticsearch",
+                "servicePort": 9200
+              }
+            },
+            {
+              "path": "/<indexName>/<docTypeName>",
+              "backend": {
+                "serviceName": "reactive-sandbox-test-reactive-sandbox-elasticsearch",
+                "servicePort": 9200
+              }
+            },
+            {
+              "path": "/<indexName>",
+              "backend": {
+                "serviceName": "reactive-sandbox-test-reactive-sandbox-elasticsearch",
+                "servicePort": 9200
+              }
+            },
+            {
+              "path": "/_cat/health",
+              "backend": {
+                "serviceName": "reactive-sandbox-test-reactive-sandbox-elasticsearch",
+                "servicePort": 9200
+              }
+            },
+            {
+              "path": "/_all",
+              "backend": {
+                "serviceName": "reactive-sandbox-test-reactive-sandbox-elasticsearch",
+                "servicePort": 9200
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "status": {
+    "loadBalancer": {
+      "ingress": [
+        {}
+      ]
+    }
+  }
+}
