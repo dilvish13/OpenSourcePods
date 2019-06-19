@@ -3,7 +3,7 @@
   "apiVersion": "extensions/v1beta1",
   "metadata": {
     "name": "kafka-manager-test-kafka-manager",
-    "namespace": "test",
+    "namespace": "kube-system",
     "labels": {
       "app.kubernetes.io/instance": "kafka-manager-test",
       "app.kubernetes.io/managed-by": "Tiller",

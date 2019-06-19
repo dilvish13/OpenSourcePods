@@ -3,7 +3,7 @@
   "apiVersion": "v1",
   "metadata": {
     "name": "reactive-sandbox-test-reactive-sandbox-zookeeper",
-    "namespace": "test",
+    "namespace": "kube-system",
     "labels": {
       "app": "reactive-sandbox",
       "chart": "reactive-sandbox-0.2.0",

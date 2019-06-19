@@ -1,10 +1,20 @@
 # OpenSourcePods
-## FOR <b>Yandex</b> Managed Service for Kubernetes
+## For **Yandex** Managed Service for Kubernetes
 https://console.cloud.yandex.ru/
 
 Cluster: sample-service-cluster
+
 Node group: sample-service-nodes-1
+
 Node count: 1
+```
+$ kubectl.exe get namespaces
+NAME          STATUS   AGE
+default       Active   23d
+kube-public   Active   23d
+kube-system   Active   23d
+```
+`kube-system`- для внутренних сервисов.
 
 Configurations for k8s deployments:
 ## reactive-sandbox

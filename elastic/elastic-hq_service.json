@@ -3,7 +3,7 @@
   "apiVersion": "v1",
   "metadata": {
     "name": "elastic-hq",
-    "namespace": "<test>",
+    "namespace": "kube-system",
     "labels": {
       "app": "elastic-hq"
     }
@@ -14,7 +14,7 @@
         "protocol": "TCP",
         "port": 5000,
         "targetPort": 5000,
-        "nodePort": <port-hq>
+        "nodePort": 10500
       }
     ],
     "selector": {

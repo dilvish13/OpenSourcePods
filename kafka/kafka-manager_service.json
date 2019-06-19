@@ -3,7 +3,7 @@
   "apiVersion": "v1",
   "metadata": {
     "name": "kafka-manager-test-kafka-manager",
-    "namespace": "test22",
+    "namespace": "kube-system",
     "labels": {
       "app.kubernetes.io/instance": "kafka-manager-test",
       "app.kubernetes.io/managed-by": "Tiller",
@@ -19,7 +19,7 @@
         "protocol": "TCP",
         "port": 9000,
         "targetPort": "kafka-manager",
-        "nodePort": <port-manager>
+        "nodePort": 10900
       }
     ],
     "selector": {

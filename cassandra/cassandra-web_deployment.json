@@ -3,7 +3,7 @@
   "apiVersion": "extensions/v1beta1",
   "metadata": {
     "name": "cassandra-web",
-    "namespace": "test",
+    "namespace": "kube-system",
     "labels": {
       "app": "cassandra-web"
     },

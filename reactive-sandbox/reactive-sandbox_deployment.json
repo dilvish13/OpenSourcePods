@@ -3,7 +3,7 @@
   "apiVersion": "extensions/v1beta1",
   "metadata": {
     "name": "reactive-sandbox-test-reactive-sandbox",
-    "namespace": "test",
+    "namespace": "kube-system",
     "selfLink": "/apis/extensions/v1beta1/namespaces/test/deployments/reactive-sandbox-test-reactive-sandbox",
     "labels": {
       "app": "reactive-sandbox",

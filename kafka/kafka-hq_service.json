@@ -3,7 +3,7 @@
   "apiVersion": "v1",
   "metadata": {
     "name": "kafkahq",
-    "namespace": "<test>",
+    "namespace": "kube-system",
     "labels": {
       "app": "kafkahq"
     }
@@ -14,7 +14,7 @@
         "protocol": "TCP",
         "port": 8080,
         "targetPort": 8080,
-        "nodePort": <port-hq>
+        "nodePort": 10800
       }
     ],
     "selector": {

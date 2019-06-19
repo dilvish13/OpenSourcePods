@@ -3,37 +3,37 @@
   "apiVersion": "extensions/v1beta1",
   "metadata": {
     "name": "elastic-search",
-    "namespace": "test"
+    "namespace": "kube-system"
   },
   "spec": {
     "rules": [
       {
-        "host": "<hostName>",
+        "host": "84.201.147.39",
         "http": {
           "paths": [
             {
-              "path": "/<indexName>/_search",
+              "path": "/order/_search",
               "backend": {
                 "serviceName": "reactive-sandbox-test-reactive-sandbox-elasticsearch",
                 "servicePort": 9200
               }
             },
             {
-              "path": "/<indexName>/<docTypeName>/_search",
+              "path": "/order/order/_search",
               "backend": {
                 "serviceName": "reactive-sandbox-test-reactive-sandbox-elasticsearch",
                 "servicePort": 9200
               }
             },
             {
-              "path": "/<indexName>/<docTypeName>",
+              "path": "/order/order",
               "backend": {
                 "serviceName": "reactive-sandbox-test-reactive-sandbox-elasticsearch",
                 "servicePort": 9200
               }
             },
             {
-              "path": "/<indexName>",
+              "path": "/order",
               "backend": {
                 "serviceName": "reactive-sandbox-test-reactive-sandbox-elasticsearch",
                 "servicePort": 9200
