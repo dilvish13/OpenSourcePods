@@ -1,0 +1,36 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "kafka-manager-test-kafka-manager",
+    "namespace": "test22",
+    "labels": {
+      "app.kubernetes.io/instance": "kafka-manager-test",
+      "app.kubernetes.io/managed-by": "Tiller",
+      "app.kubernetes.io/name": "kafka-manager",
+      "app.kubernetes.io/version": "",
+      "helm.sh/chart": "kafka-manager-1.1.1"
+    }
+  },
+  "spec": {
+    "ports": [
+      {
+        "name": "kafka-manager",
+        "protocol": "TCP",
+        "port": 9000,
+        "targetPort": "kafka-manager",
+        "nodePort": <port-manager>
+      }
+    ],
+    "selector": {
+      "app": "kafka-manager",
+      "release": "kafka-manager-test22"
+    },
+    "type": "NodePort",
+    "sessionAffinity": "None",
+    "externalTrafficPolicy": "Cluster"
+  },
+  "status": {
+    "loadBalancer": {}
+  }
+}

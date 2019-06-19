@@ -1,0 +1,30 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "cassandra-web",
+    "namespace": "<test>",
+    "labels": {
+      "app": "cassandra-web"
+    }
+  },
+  "spec": {
+    "ports": [
+      {
+        "protocol": "TCP",
+        "port": 3000,
+        "targetPort": 3000,
+        "nodePort": <port-web>
+      }
+    ],
+    "selector": {
+      "app": "cassandra-web"
+    },
+    "type": "NodePort",
+    "sessionAffinity": "None",
+    "externalTrafficPolicy": "Cluster"
+  },
+  "status": {
+    "loadBalancer": {}
+  }
+}
