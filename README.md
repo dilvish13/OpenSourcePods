@@ -94,7 +94,8 @@ Change literals:
 <service> "type": "ClusterIP"- specify if do not need direct access to port
 ```
 Check enviroment variable in deployment:
-```           {
+```
+              {
                 "name": "ZK_HOSTS",
                 "value": "reactive-sandbox-test-reactive-sandbox-zookeeper:2181"
               }
@@ -115,7 +116,8 @@ Change literals
 <service> "type": "ClusterIP"- specify if do not need direct access to port
 ```
 Change ip after every cassandra service pod recreation:
-```           {
+```
+              {
                 "name": "CASSANDRA_HOST_IP",
                 "value": "<ip>"
               },
@@ -136,7 +138,8 @@ Change literals:
 <service> "type": "ClusterIP"- specify if do not need direct access to port
 ```
 Change ip after every ES pod recreation:
-```          {
+```
+             {
                 "name": "test_host",
                 "value": "<ip>"
               },
