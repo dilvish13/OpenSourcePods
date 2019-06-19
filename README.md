@@ -1,5 +1,12 @@
 # OpenSourcePods
-Configurations for k8s deployments
+## FOR <b>Yandex</b> Managed Service for Kubernetes
+https://console.cloud.yandex.ru/
+
+Cluster: sample-service-cluster
+Node group: sample-service-nodes-1
+Node count: 1
+
+Configurations for k8s deployments:
 ## reactive-sandbox
 Kafka + ES + Cassandra services.
 
